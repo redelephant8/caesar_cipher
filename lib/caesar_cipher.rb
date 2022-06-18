@@ -1,5 +1,5 @@
 def caesar_cipher(string, shift)
-  string_array = string.downcase.split('')
+  string_array = string.split('')
   cipher_array = []
   string_array.map do |letter|
     if letter.ord.between?(97, 122)
@@ -14,11 +14,5 @@ def caesar_cipher(string, shift)
     letter = number.chr if number != letter
     cipher_array.push(letter)
   end
-  cipher_array.join.capitalize
+  cipher_array.join
 end
-
-puts 'Enter a phrase or word: '
-string = gets.chomp
-puts 'Enter the Caesar Cipher shift number: '
-shift = gets.chomp.to_i
-p caesar_cipher(string, shift)
